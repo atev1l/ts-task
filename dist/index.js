@@ -25,7 +25,7 @@ const WeatherMap = {
 const stopAllSounds = () => {
     let tracks = document.querySelectorAll('audio');
     if (tracks) {
-        tracks.forEach(item => console.log(item.volume));
+        tracks.forEach(item => item.pause());
     }
     Object.keys(WeatherMap).forEach(key => {
         WeatherMap[key].isPlay = false;
@@ -64,7 +64,6 @@ const soundClick = (weather) => {
 };
 const changeVolume = (value) => {
     let tracks = document.querySelectorAll('audio');
-    console.log('v', typeof value);
     if (tracks) {
         tracks.forEach(audio => {
             audio.volume = value / 10;
